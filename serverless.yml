@@ -1,0 +1,15 @@
+plugins:
+  - serverless-offline
+service: image-converter
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  upload:
+    handler: handler.upload
+    events:
+      - http:
+          path: data
+          method: put
